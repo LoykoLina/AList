@@ -2,18 +2,18 @@
 ---
 
 # Содержание
-1 [Введение](#intro)  
-2 [Требования пользователя](#user_requirements) 
-2.1 [Программные интерфейсы](#programming_interface)
-2.2 [Интерфейс пользователя](#user_interface)
-2.3 [Характеристики пользователей](#user_specifications) 
-2.4 [Предположения и зависимости](#assumptions_and_dependencies)
-3 [Системные требования](#system_requirements)
-3.1 [Функциональные требования](#functional_requirements)
-3.2 [Нефункциональные требования](#non-functional_requirements)
-3.2.1 [Атрибуты качества](#quality_attributes) 
-3.2.2 [Ограничения](#restrictions)
-4 [Аналоги](#analogues)
+1 [Введение](#intro) <br/>
+2 [Требования пользователя](#user_requirements) <br/>
+2.1 [Программные интерфейсы](#programming_interface) <br/>
+2.2 [Интерфейс пользователя](#user_interface) <br/>
+2.3 [Характеристики пользователей](#user_specifications)  <br/>
+2.4 [Предположения и зависимости](#assumptions_and_dependencies) <br/>
+3 [Системные требования](#system_requirements) <br/>
+3.1 [Функциональные требования](#functional_requirements) <br/>
+3.2 [Нефункциональные требования](#non-functional_requirements) <br/>
+3.2.1 [Атрибуты качества](#quality_attributes) <br/>
+3.2.2 [Ограничения](#restrictions) <br/>
+4 [Аналоги](#analogues) <br/>
 
 <a name="intro"/>
 
