@@ -5,7 +5,7 @@
 2 [Добавление списка задач](#add_list)  
 3 [Просмотр задач](#load_tasks)  
 4 [Добавление задач](#add_task)  
-5 [Редактирование списка задач](#edit_list)
+5 [Редактирование списка задач](#edit_list)  
 6 [Удаление задачи](#delete_task)  
 
 <a name="load_lists"/>
@@ -36,7 +36,7 @@
 
 ## Редактирование списка задач
 
-[Edit list](https://github.com/LoykoLina/AList/blob/master/Diagrams/Activity/Edit%20list.png)
+![Edit list](https://github.com/LoykoLina/AList/blob/master/Diagrams/Activity/Edit%20list.png)
 
 <a name="delete_task"/>
 
