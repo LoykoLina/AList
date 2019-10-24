@@ -1,5 +1,6 @@
 # Диаграмма вариантов использования
 
+![Use case](https://github.com/LoykoLina/AList/blob/master/Diagrams/Use%20case/Use%20case.png)
 
  
 ## Варианты использования
