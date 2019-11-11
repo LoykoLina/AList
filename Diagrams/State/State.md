@@ -10,22 +10,22 @@
 
 ## Добавление списка задач
 
-![Add list]()
+![Add list](https://github.com/LoykoLina/Marbury/blob/master/Diagrams/State/Add%20list.png)
 
 <a name="add_task"/>
 
 ## Добавление задач 
 
-![Add task]()
+![Add task](https://github.com/LoykoLina/Marbury/blob/master/Diagrams/State/Add%20task.png)
 
 <a name="edit_list"/>
 
 ## Редактирование списка задач
 
-![Edit list]()
+![Edit list](https://github.com/LoykoLina/Marbury/blob/master/Diagrams/State/Edit%20list.png)
 
 <a name="delete_task"/>
 
 ## Удаление задачи
 
-![Delete task]()
+![Delete task](https://github.com/LoykoLina/Marbury/blob/master/Diagrams/State/Delete%20task.png)
