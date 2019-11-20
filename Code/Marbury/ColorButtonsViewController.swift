@@ -9,10 +9,6 @@
 import UIKit
 
 class ColorButtonsViewController: UIViewController {
-
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//    }
     
     func doRoundButtons(_ colorButtons: [UIButton]){
         for button in colorButtons {
@@ -51,6 +47,27 @@ class ColorButtonsViewController: UIViewController {
                 colorButtonsTapped(colorButtons: colorButtons, sender: button)
                 break
             }
+        }
+        
+        switch color {
+        case UIColor.getColorFromMyAssets(named: "ButtonColor1"):
+            colorButtonsTapped(colorButtons: colorButtons, sender: colorButtons[0])
+        case UIColor.getColorFromMyAssets(named: "ButtonColor2"):
+            colorButtonsTapped(colorButtons: colorButtons, sender: colorButtons[1])
+        case UIColor.getColorFromMyAssets(named: "ButtonColor3"):
+            colorButtonsTapped(colorButtons: colorButtons, sender: colorButtons[2])
+        case UIColor.getColorFromMyAssets(named: "ButtonColor4"):
+            colorButtonsTapped(colorButtons: colorButtons, sender: colorButtons[3])
+        case UIColor.getColorFromMyAssets(named: "ButtonColor5"):
+            colorButtonsTapped(colorButtons: colorButtons, sender: colorButtons[4])
+        case UIColor.getColorFromMyAssets(named: "ButtonColor6"):
+            colorButtonsTapped(colorButtons: colorButtons, sender: colorButtons[5])
+        case UIColor.getColorFromMyAssets(named: "ButtonColor7"):
+            colorButtonsTapped(colorButtons: colorButtons, sender: colorButtons[6])
+        case UIColor.getColorFromMyAssets(named: "ButtonColor8"):
+            colorButtonsTapped(colorButtons: colorButtons, sender: colorButtons[7])
+        default:
+            return
         }
     }
 }

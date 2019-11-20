@@ -31,6 +31,10 @@ class NewItemAlertView: UIView {
         return titleTextField.text
     }
 
+    @IBAction func cancelButtonTapped(_ sender: UIButton) {
+        delegate?.cancelButtonTapped()
+    }
+    
     @IBAction func createButtonTapped(_ sender: UIButton) {
         if titleTextField.text != "" {
             delegate?.createButtonTapped()
