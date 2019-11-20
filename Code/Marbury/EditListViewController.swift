@@ -61,10 +61,10 @@ class EditListViewController: ColorButtonsViewController,  UITextFieldDelegate{
         let listVC = self.storyboard?.instantiateViewController(withIdentifier: "ToDoListView") as! ToDoListViewController
         
         if segue.identifier == "ListChanged" {
-            
+            let oldTitle = defaultList.getTitle()
             defaultList.resave(title: listTitle.text!, color: selectedButtonColorIn(colorButtons))
             listVC.list = defaultList
-            let items = ToDoTableViewController.loadDataByCategory(category: defaultList.getTitle(), createdAt: defaultList.getCreatedAt())
+            let items = ToDoTableViewController.loadDataByCategory(category: oldTitle, createdAt: defaultList.getCreatedAt())
             for item in items {
                 item.resave(list: listTitle.text!)
             }
