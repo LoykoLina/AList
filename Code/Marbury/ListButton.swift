@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class ListButton: UIButton {
     
     func setListButtonWith(color: UIColor) {

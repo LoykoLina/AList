@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 class ToDoItem : Codable {
-    private var title : String
-    private var list : String
-    private var listCreatedAt: Date
+    private(set) var title : String
+    private(set) var list : String
+    private(set) var listCreatedAt: Date
     private var completed : Bool
-    private var createdAt : Date
+    private(set) var createdAt : Date
     private var itemIdentifier : UUID
     
     init(title: String, list : String, listCreatedAt: Date, completed : Bool, createdAt : Date) {
@@ -54,22 +54,6 @@ class ToDoItem : Codable {
     
     func markAsUncompleted() {
         self.completed = false
-    }
-    
-    func getTitle() -> String {
-        return self.title
-    }
-    
-    func getList() -> String {
-        return self.list
-    }
-    
-    func getListCreatedAt() -> Date {
-        return self.listCreatedAt
-    }
-    
-    func getCreatedAt() -> Date {
-        return self.createdAt
     }
     
     func isCompleted() -> Bool {

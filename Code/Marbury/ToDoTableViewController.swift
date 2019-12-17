@@ -37,8 +37,8 @@ class ToDoTableViewController: UITableViewController {
     
     func loadTodoItems() {
         toDoItems = [ToDoItem]()
-        toDoItems = ToDoTableViewController.loadDataByCategory(category: list.getTitle(), createdAt: list.getCreatedAt())
-        toDoItems.sort(by: {$0.getCreatedAt() < $1.getCreatedAt()})
+        toDoItems = ToDoTableViewController.loadDataByCategory(category: list.title, createdAt: list.createdAt)
+        toDoItems.sort(by: {$0.createdAt < $1.createdAt})
         tableView.reloadData()
     }
     
@@ -46,7 +46,7 @@ class ToDoTableViewController: UITableViewController {
         let items = DataManager.loadWithPrefix(type: ToDoItem.self, prefix: "item")
         var finalItems = [ToDoItem]()
         for item in items {
-            if item.getList() == category && item.getListCreatedAt() == createdAt {
+            if item.list == category && item.listCreatedAt == createdAt {
                 finalItems.append(item)
             }
         }
@@ -69,7 +69,7 @@ class ToDoTableViewController: UITableViewController {
         
         // Configure the cell...
         let toDoItem = toDoItems[indexPath.row]
-        cell.toDoLabel.text = toDoItem.getTitle()
+        cell.toDoLabel.text = toDoItem.title
         
         cell.setButton(item: toDoItem, listColor: list.rgbToUIColor())
         

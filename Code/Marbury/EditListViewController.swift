@@ -18,7 +18,7 @@ class EditListViewController: ColorButtonsViewController,  UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        listTitle.insertText(defaultList.getTitle())
+        listTitle.insertText(defaultList.title)
         selectButton(color: defaultList.rgbToUIColor(), in: colorButtons)
         listTitle.delegate = self
         doRoundButtons(colorButtons)
@@ -32,7 +32,7 @@ class EditListViewController: ColorButtonsViewController,  UITextFieldDelegate{
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if listTitle.text == "" || (listTitle.text == defaultList.getTitle() && selectedButtonColorIn(colorButtons) == defaultList.rgbToUIColor()) {
+        if listTitle.text == "" || (listTitle.text == defaultList.title && selectedButtonColorIn(colorButtons) == defaultList.rgbToUIColor()) {
             doneButton.isEnabled = false
             return true
         } else {
@@ -61,10 +61,10 @@ class EditListViewController: ColorButtonsViewController,  UITextFieldDelegate{
         let listVC = self.storyboard?.instantiateViewController(withIdentifier: "ToDoListView") as! ToDoListViewController
         
         if segue.identifier == "ListChanged" {
-            let oldTitle = defaultList.getTitle()
+            let oldTitle = defaultList.title
             defaultList.resave(title: listTitle.text!, color: selectedButtonColorIn(colorButtons))
             listVC.list = defaultList
-            let items = ToDoTableViewController.loadDataByCategory(category: oldTitle, createdAt: defaultList.getCreatedAt())
+            let items = ToDoTableViewController.loadDataByCategory(category: oldTitle, createdAt: defaultList.createdAt)
             for item in items {
                 item.resave(list: listTitle.text!)
             }
@@ -72,7 +72,7 @@ class EditListViewController: ColorButtonsViewController,  UITextFieldDelegate{
         }
         
         if segue.identifier == "DeletedList" {
-            let items = ToDoTableViewController.loadDataByCategory(category: defaultList.getTitle(), createdAt: defaultList.getCreatedAt())
+            let items = ToDoTableViewController.loadDataByCategory(category: defaultList.title, createdAt: defaultList.createdAt)
             for item in items{
                 item.deleteItem()
             }

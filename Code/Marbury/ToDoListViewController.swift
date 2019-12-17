@@ -10,11 +10,11 @@ import UIKit
 
 class ToDoListViewController: UIViewController {
     
-    @IBOutlet weak var container: UIView!
+    @IBOutlet private weak var container: UIView!
     var list: ListItem!
     private var tableVC: ToDoTableViewController!
     private var newItemAlertView: NewItemAlertView!
-    let visualEffectView: UIVisualEffectView = {
+    private let visualEffectView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .dark)
         let effectView = UIVisualEffectView(effect: blurEffect)
         effectView.translatesAutoresizingMaskIntoConstraints = false
@@ -27,7 +27,7 @@ class ToDoListViewController: UIViewController {
     }
     
     func setTitleAndColor() {
-        self.navigationItem.title = list.getTitle()
+        self.navigationItem.title = list.title
     }
     
     func setAlertView() {
@@ -72,7 +72,7 @@ class ToDoListViewController: UIViewController {
         }
     }
     
-    @IBAction func addNewToDo(_ sender: Any) {
+    @IBAction private func addNewToDo(_ sender: Any) {
         setupVisualEffectView()
         setAlertView()
         animateIn()
@@ -94,6 +94,8 @@ class ToDoListViewController: UIViewController {
     
 }
 
+// MARK: - Delegate
+
 extension ToDoListViewController: NewItemAlertDelegate {
     func cancelButtonTapped() {
         animateOut()
@@ -102,7 +104,7 @@ extension ToDoListViewController: NewItemAlertDelegate {
     func createButtonTapped() {
         guard let newTitle = newItemAlertView.getText() else {return}
         animateOut()
-        let newToDo = ToDoItem(title: newTitle, list: self.list.getTitle(), listCreatedAt: self.list.getCreatedAt())
+        let newToDo = ToDoItem(title: newTitle, list: self.list.title, listCreatedAt: self.list.createdAt)
         newToDo.saveItem()
         self.tableVC.viewWillAppear(true)
     }

@@ -11,12 +11,12 @@ import UIKit
 
 class ListItem: Codable{
     
-    private var title: String
+    private(set) var title: String
     private var red: CGFloat = 0
     private var green: CGFloat = 0
     private var blue: CGFloat = 0
     private var alpha: CGFloat = 0
-    private var createdAt: Date
+    private(set) var createdAt: Date
     private var identifier: UUID
     
     init(title: String, color: UIColor, createdAt: Date) {
@@ -40,14 +40,6 @@ class ListItem: Codable{
     
     func UIColorToRGB(color: UIColor) {
         color.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-    }
-    
-    func getTitle() -> String {
-        return self.title
-    }
-    
-    func getCreatedAt() -> Date {
-        return self.createdAt
     }
     
     func resave(title: String, color: UIColor) {

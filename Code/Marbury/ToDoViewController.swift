@@ -10,11 +10,11 @@ import UIKit
 
 class ToDoViewController: UIViewController{
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var addListButton: UIButton!
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var buttonsView: UIView!
-    @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var scrollView: UIScrollView!
+    @IBOutlet private weak var addListButton: UIButton!
+    @IBOutlet private weak var contentView: UIView!
+    @IBOutlet private weak var buttonsView: UIView!
+    @IBOutlet private weak var contentViewHeightConstraint: NSLayoutConstraint!
     private var newItemAlertView: NewItemAlertView!
     private var lists: [ListItem]!
     private var colorButtons: [ListButton]!
@@ -34,7 +34,7 @@ class ToDoViewController: UIViewController{
     private func loadListItems() {
         lists = [ListItem]()
         lists = DataManager.loadWithPrefix(type: ListItem.self, prefix: "list")
-        lists.sort(by: {$0.getCreatedAt() > $1.getCreatedAt()})
+        lists.sort(by: {$0.createdAt > $1.createdAt})
     }
     
     private func loadListsView() {
@@ -58,14 +58,14 @@ class ToDoViewController: UIViewController{
             buttonsView.addSubview(button)
             button.setListButtonWith(color: list.rgbToUIColor())
             button.frame = CGRect(x: offsetx, y: 27 + offsety, width: 165, height: 115)
-            button.setTitle(list.getTitle(), for: .normal)
+            button.setTitle(list.title, for: .normal)
             button.addTarget(self, action: #selector(tappedListButton), for: .touchUpInside)
             colorButtons.append(button)
             flag += 1
         }
     }
     
-    @objc func tappedListButton(sender: UIButton) {
+    @objc private func tappedListButton(sender: UIButton) {
         performSegue(withIdentifier: "CategoryTasks", sender: sender)
     }
     
